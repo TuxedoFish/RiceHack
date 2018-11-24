@@ -10,5 +10,22 @@
 	width: 100%;
 	height: 100px;
 
+	background-color: #19191a;
+
 	position: relative;
+}
+
+.splashscreen {
+	width: 100%;
+	height: 500px;
+
+	position: relative;
+
+    background-image: url("./images/farming.png");
+
+	/* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
