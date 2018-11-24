@@ -10,6 +10,12 @@ initFirebase();
 //Add a sample piece of info
 addDummyData();
 
+//Takes the user to the index page
+app.use(express.static('public'));
+app.get("/", function (request, response) {
+  response.sendFile(__dirname + '/views/index.html');
+});
+
 function initFirebase() {
 	//initialises a firebase app with the credential
 	admin.initializeApp({
