@@ -19,10 +19,10 @@ function initFirebase() {
 	    "project_id": process.env.FIREBASE_PROJECT_ID,
 	    "private_key_id": process.env.FIREBASE_PRIVATE_KEY_ID
 	  }),
-	  databaseURL: "https://socialapp-575bc.firebaseio.com", 
-	  timestampsInSnapshots: true
+	  databaseURL: "https://socialapp-575bc.firebaseio.com"
 	});
-	
+
+	admin.firestore().settings( { timestampsInSnapshots: true })
 	db = admin.firestore();
 }
 
