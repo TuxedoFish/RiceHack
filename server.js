@@ -1,10 +1,6 @@
 //Set Up Project
 var express = require('express');
 var app = express();
-var randomstring = require("randomstring");
-const util = require('util');
-var moment = require('moment');
-const nodeRequest = require('request');
 var admin = require('firebase-admin');
 
 //Required constants for Database
