@@ -5,6 +5,10 @@ var admin = require('firebase-admin');
 
 //Database
 var db;
+//Start up firestore
+initFirebase();
+//Add a sample piece of info
+addDummyData();
 
 function initFirebase() {
 	//initialises a firebase app with the credential
@@ -19,8 +23,6 @@ function initFirebase() {
 	});
 	db = admin.firestore();
 }
-
-addDummyData();
 
 function addDummyData() {
 	db.collection("STOCK").doc("2411183204").set(generateFakeData());
