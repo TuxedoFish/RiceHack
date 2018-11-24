@@ -21,6 +21,11 @@ function initFirebase() {
 	  }),
 	  databaseURL: "https://socialapp-575bc.firebaseio.com"
 	});
+
+	const firestore = new Firestore();
+	const settings = {timestampsInSnapshots: true};
+	firestore.settings(settings);
+
 	db = admin.firestore();
 }
 
