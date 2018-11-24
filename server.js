@@ -3,9 +3,7 @@ var express = require('express');
 var app = express();
 var admin = require('firebase-admin');
 
-//Required constants for Database
-const client_id = process.env.OAUTH_CLIENT_ID;
-const client_secret = process.env.OAUTH_CLIENT_SECRET;
+//Database
 var db;
 
 function initFirebase() {
@@ -21,6 +19,8 @@ function initFirebase() {
 	});
 	db = admin.firestore();
 }
+
+addDummyData();
 
 function addDummyData() {
 	db.collection("STOCK").doc("2411183204").set(generateFakeData());
