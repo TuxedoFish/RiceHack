@@ -13,7 +13,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
-$(document).ready(function() {=
+$(document).ready(function() {
   var url = '/data/getdata';
   $.getJSON(url, function(data) {
     // console.log(data);
