@@ -22,7 +22,7 @@ function updateUI() {
 	$.getJSON(url, function(data) {
 		console.log("loaded : " + data["posts"].length + " data points");
 
-		var tableRef = document.getElementById('#farmers');
+		var tableRef = document.getElementById('#farmers tr');
 		while ( tableRef.rows.length > 1 ) {
 			tableRef.deleteRow(1);
 		}
