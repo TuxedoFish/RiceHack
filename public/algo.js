@@ -33,3 +33,42 @@ function updateUI() {
 	    }
 	});
 }
+
+function grabQuote(input) {
+	var url = '/data/getdata/';
+	$.getJSON(url, function(data) {
+		totprices=[];
+		amounts=[];
+
+	    for(var i=0; i<data["posts"].length; i++) {
+	    	var x = data["posts"][i];
+
+	    	var total = (x["amount"] * x["cost"]) + x["shipping"];
+	    	var amount = x["amount"];
+
+	    	totprices.add(total);
+	    	amounts.add(amount);
+	    }
+
+	    mTotal = 0;
+	    mAmount = 0;
+
+	    mBest = totprices[0]/amounts[0];
+	    indexTA = 0;
+
+	    while(mTotal<input) {
+		    for(var i=1; i<totprices.length; i++) {
+		    	var ratio = totprices[i]/amounts[i];
+		    	if(ratio<mBest) {
+		    		mBest = ratio;
+		    		indexTA = i;
+		    	}
+		    }
+
+			mTotal.add(totprices[indexTA]);
+			mAmount.add(amounts[indexTA]);
+			array.splice(indexTA, 1);
+		}
+	});
+}
+
