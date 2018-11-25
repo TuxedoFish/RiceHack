@@ -68,8 +68,8 @@ function grabQuote() {
 		    	}
 		    }
 
-			mTotal += totprices[indexTA];
 			mAmount += amounts[indexTA];
+			mTotal += totprices[indexTA];
 			totprices.splice(indexTA, 1);
 			amounts.splice(indexTA, 1);
 		}
