@@ -47,17 +47,18 @@ body {
 
 #quotes {
 	left: 200px;
-	top: 50px;
+	top: 100px;
 
 	position: relative;
 }
 
 .motto{
-	font-size: 40px;
+	font-size: 75px;
+    font-weight: bold;
 	color: #FFFFFF;
 
     position: absolute;
-    
+
     bottom: 8px;
     right: 16px;
 }
