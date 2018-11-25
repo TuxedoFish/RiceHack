@@ -74,7 +74,7 @@ function grabQuote() {
 			amounts.splice(indexTA, 1);
 		}
 
-		var text = mAmount + " at : " + mTotal;
+		var text = mAmount + " at : " + parseFloat(Math.round(mTotal * 100) / 100).toFixed(2);
 		console.log(text);
 		$("#quote").text(text);
 	});
