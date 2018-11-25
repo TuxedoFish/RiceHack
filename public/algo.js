@@ -29,7 +29,7 @@ function updateUI() {
 
 		    var markup = "<tr><td>" + x["name"] + "</td><td>" + x["cost"] + "</td><td>" + x["country"] + "</td>"
 		    				+ "<td>" + x["amount"] + "</td><td>" + x["shipping"] + "</td><td>" + x["quality"] + "</td></tr>";
-		    $("#farmers man").append(markup);
+		    $("#farmers main").append(markup);
 	    }
 	});
 }
