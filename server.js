@@ -19,13 +19,6 @@ app.get("/", function (request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });
 
-app.get("/data/getData", function(request, response) {
-  var state = randomstring.generate();
-  states[state] = moment();
-  var url = util.format('https://uclapi.com/oauth/authorise?client_id=%s&state=%s', client_id, state);
-  response.redirect(url);
-});
-
 function initFirebase() {
 	//initialises a firebase app with the credential
 	admin.initializeApp({
@@ -55,6 +48,26 @@ function generateFakeData() {
 			"cost": Math.round(Math.random() * 100)/100 + 2
 		};
 }
+
+app.get("/data/getdata", function(request, response) {
+	var query = firebase.firestore()
+	    .collection('STOCK')
+	    .orderBy('rating', 'desc')
+	    .limit(50);
+	var json = { "posts":[] };
+	  
+	query.forEach(function(post) {
+	 	json.push({"amount": post.get("amount"), "cost": post.get("cost"),
+	  		"country": post.get("country"), "name": post.get("name"), 
+	  		"quality": post.get("quality"), "shipping": post.get("shipping"))});
+	})
+	.catch(err => {
+	    console.log('Error loading stock : ', err);
+	});
+
+	res.setHeader('Content-Type', 'application/json');
+	res.send(json);
+});
 
 //Listen for requests
 var listener = app.listen(process.env.PORT, function () {
