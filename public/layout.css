@@ -101,6 +101,7 @@ input[type=submit] {
     height: 50px;
     width: 200px;
     text-align: center;
+    font-size: 20px
 }
 
 #quote {
