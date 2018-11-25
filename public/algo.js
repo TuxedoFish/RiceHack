@@ -79,9 +79,9 @@ function grabQuote() {
 		    if(indexTA == -1) {
 		    	var started = false;
 
-		    	for(var i=1; i<totprices.length; i++) {
+		    	for(var i=0; i<totprices.length; i++) {
 			    	var ratio = totprices[i]/amounts[i];
-			    	if((ratio<mBest || started===false) && mAmount+amounts[i] <= input + 200) {
+			    	if((ratio<mBest || started===false) && mAmount+amounts[i] <= input + 100) {
 			    		mBest = ratio;
 			    		indexTA = i;
 			    		started = true;
