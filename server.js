@@ -63,6 +63,8 @@ function updateJson() {
 	var query = db.collection('STOCK').orderBy('quality', 'desc').limit(50);
 
 	query.get().then(snapshot => {
+		console.log("query size : " + snapshot.length);
+	    
 	    snapshot.forEach(doc => {
 	    	console.log("one more stock added");
 		 	json.push({"amount": post.get("amount"), "cost": post.get("cost"),
