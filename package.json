@@ -4,11 +4,13 @@
   "description": "trading platform",
   "main": "server.js",
   "scripts": {
-     "start": "node server.js" },
+    "start": "node server.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "firebase-admin": "^6.2.0"
+    "firebase-admin": "^6.2.0",
+    "randomstring": "^1.1.5"
   }
 }
