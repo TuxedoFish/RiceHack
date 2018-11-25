@@ -70,7 +70,7 @@ function grabQuote(input) {
 			array.splice(indexTA, 1);
 		}
 
-		$("#quote").html(mAmount + " at : " mTotal);
+		$("#quote").html(mAmount + " at : " + mTotal);
 	});
 }
 
