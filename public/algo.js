@@ -23,6 +23,7 @@ function updateUI() {
 		console.log("loaded : " + data["posts"].length + " data points");
 
 		$("#farmers tr").find("tr:gt(0)").remove();
+		$("table tbody").remove();
 
 	    for(var i=0; i<data["posts"].length; i++) {
 	    	var x = data["posts"][i];
