@@ -89,10 +89,12 @@ function grabQuote() {
 
 		    if(indexTA==-1) { console.log("ERROR"); }
 
-			mAmount += amounts[indexTA];
 			mTotal += totprices[indexTA];
+			mAmount += amounts[indexTA];
 			totprices.splice(indexTA, 1);
 			amounts.splice(indexTA, 1);
+
+			console.log("mTotal : " + mAmount);
 		}
 
 		var text = mAmount + " at " + parseFloat(Math.round(mTotal * 100) / 100).toFixed(2);
