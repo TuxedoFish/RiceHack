@@ -95,3 +95,7 @@ input[type=submit] {
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
+
+#quote {
+	display: inline-block;
+}

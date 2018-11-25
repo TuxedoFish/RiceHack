@@ -36,6 +36,7 @@ function updateUI() {
 
 function grabQuote() {
 	input = $("#quoteinput").val();
+	console.log("input : " + input);
 
 	var url = '/data/getdata/';
 	$.getJSON(url, function(data) {
