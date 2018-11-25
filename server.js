@@ -50,7 +50,7 @@ function generateFakeData() {
 			"amount":  ((Math.floor(Math.random() * 5)+1) * 100),
 			"quality": Math.floor(Math.random() * 5) + 1,
 			"shipping": Math.round(Math.random() * 100) / 10,
-			"cost": (Math.round(Math.random() * 100)/100) + 2
+			"cost": (Math.floor(Math.random() * 100)/100) + 2
 		};
 }
 
