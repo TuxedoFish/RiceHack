@@ -46,8 +46,8 @@ function grabQuote(input) {
 	    	var total = (x["amount"] * x["cost"]) + x["shipping"];
 	    	var amount = x["amount"];
 
-	    	totprices.add(total);
-	    	amounts.add(amount);
+	    	totprices.push(total);
+	    	amounts.push(amount);
 	    }
 
 	    mTotal = 0;
