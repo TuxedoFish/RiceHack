@@ -56,8 +56,8 @@ function grabQuote() {
 	    mTotal = 0;
 	    mAmount = 0;
 
-	    while(mAmount<input) {
-	    	if(mAmount+amounts[0] <= input + 100) {
+	    while(mAmount + 100<input) {
+	    	if(mAmount+amounts[0] <= input) {
 		    	mBest = totprices[0]/amounts[0];
 		    	indexTA = 0;
 		    } else {
