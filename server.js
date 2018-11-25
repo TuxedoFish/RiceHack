@@ -16,7 +16,8 @@ initFirebase();
 //Load the current stock
 updateJson();
 //Keep the content dynamic
-setInterval(updateTheStack, 5000);
+updateTheStack();
+setInterval(updateTheStack, 30000);
 
 //Takes the user to the index page
 app.use(express.static('public'));
