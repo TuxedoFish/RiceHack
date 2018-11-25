@@ -73,11 +73,11 @@ function grabQuote() {
 		    	}
 		    }
 
-		    mBest = totprices[0]/amounts[0];
-		    indexTA = 0;
-
 		    //awful awful hardcoded bit
 		    if(indexTA == -1) {
+			    mBest = totprices[0]/amounts[0];
+			    indexTA = 0;
+
 		    	for(var i=1; i<totprices.length; i++) {
 			    	var ratio = totprices[i]/amounts[i];
 			    	if(ratio<mBest && mAmount+amounts[i] <= input + 150) {
