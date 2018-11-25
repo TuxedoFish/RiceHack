@@ -94,8 +94,14 @@ input[type=submit] {
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
+    border-color: #ac5358;
+    color: #0d2432;
+    background-color: #0d2432;
+    height: 50px;
+    width: 100px;
 }
 
 #quote {
+	padding-left: 20px;
 	display: inline-block;
 }
