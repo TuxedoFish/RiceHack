@@ -61,17 +61,20 @@ function grabQuote() {
 		    	mBest = totprices[0]/amounts[0];
 		    	indexTA = 0;
 		    } else {
-		    	mBest = 10000;
+		    	mBest = 0;
 		    	indexTA = -1;
 		    }
 
 		    for(var i=1; i<totprices.length; i++) {
 		    	var ratio = totprices[i]/amounts[i];
-		    	if(ratio<mBest && mAmount+amounts[i] <= input) {
+		    	if((ratio<mBest || indexTA==-1) && mAmount+amounts[i] <= input) {
 		    		mBest = ratio;
 		    		indexTA = i;
 		    	}
 		    }
+
+		    mBest = totprices[0]/amounts[0];
+		    indexTA = 0;
 
 		    //awful awful hardcoded bit
 		    if(indexTA == -1) {
