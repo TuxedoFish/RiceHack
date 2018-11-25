@@ -27,7 +27,7 @@ function updateUI() {
 	    for(var i=0; i<data["posts"].length; i++) {
 	    	var x = data["posts"][i];
 
-		    var markup = "<tr><td>" + x["name"] + "</td><td>" + x["cost"] + "</td><td>" + x["country"] + "</td>"
+		    var markup = "<tr><td>" + x["name"] + "</td><td>" + parseFloat(Math.round(x["cost"] * 100) / 100).toFixed(2) + "</td><td>" + x["country"] + "</td>"
 		    				+ "<td>" + x["amount"] + "</td><td>" + x["shipping"] + "</td><td>" + x["quality"] + "</td></tr>";
 		    $("#main").append(markup);
 	    }
