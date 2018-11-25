@@ -9,7 +9,7 @@ const nodeRequest = require('request');
 
 //Database
 var db;
-var NO_CUSTOMERS = 10;
+var NO_CUSTOMERS = 3;
 var NAMES = ["Susilo", "Albertus", "Abdurrahman", "Soetomo", "Boedino", "Ranomi"];
 var json = { "posts" : [] };
 //Start up firestore
@@ -18,6 +18,8 @@ initFirebase();
 for(var i=0; i<NO_CUSTOMERS; i++) { addDummyData(); } 
 //Load the current stock
 updateJson();
+//Keep the content dynamic
+setTimeout(updateTheStack, 1500);
 
 //Takes the user to the index page
 app.use(express.static('public'));
@@ -58,6 +60,12 @@ function generateFakeData() {
 app.get("/data/getdata/", function(request, response) {
 	response.send(JSON.stringify(json));
 });
+
+function updateTheStack() {
+	addDummyData();
+	updateJson();
+
+}
 
 function updateJson() {
 	var query = db.collection('STOCK');
