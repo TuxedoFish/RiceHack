@@ -19,8 +19,8 @@ $(document).ready(function() {
     for(var i=0; i<data["posts"].length; i++) {
     	var x = data["posts"][i];
 
-	    var markup = "<tr><td>" + x["name"] + "</td><td>" + x["cost"] + "</td><td>" + x["country"] + "</td></tr>"
-	    				+ "<tr><td>" + x["amount"] + "</td><td>" + x["shipping"] + "</td><td>" + x["quality"] + "</td></tr>";
+	    var markup = "<tr><td>" + x["name"] + "</td><td>" + x["cost"] + "</td><td>" + x["country"] + "</td>"
+	    				+ "<td>" + x["amount"] + "</td><td>" + x["shipping"] + "</td><td>" + x["quality"] + "</td></tr>";
 	    $("table tbody").append(markup);
     }
   });
