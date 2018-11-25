@@ -75,14 +75,14 @@ function grabQuote() {
 
 		    //awful awful hardcoded bit
 		    if(indexTA == -1) {
-			    mBest = totprices[0]/amounts[0];
-			    indexTA = 0;
+		    	var started = false;
 
 		    	for(var i=1; i<totprices.length; i++) {
 			    	var ratio = totprices[i]/amounts[i];
-			    	if(ratio<mBest && mAmount+amounts[i] <= input + 150) {
+			    	if((ratio<mBest || !started) && mAmount+amounts[i] <= input + 150) {
 			    		mBest = ratio;
 			    		indexTA = i;
+			    		started = true;
 			    	}
 		    	}
 		    }
