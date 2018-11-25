@@ -11,10 +11,13 @@ const nodeRequest = require('request');
 var db;
 var NO_CUSTOMERS = 10;
 var NAMES = ["Susilo", "Albertus", "Abdurrahman", "Soetomo", "Boedino", "Ranomi"];
+var json = { "posts":[] };
 //Start up firestore
 initFirebase();
 //Add a sample piece of info
 for(var i=0; i<NO_CUSTOMERS; i++) { addDummyData(); } 
+//Load the current stock
+updateJson();
 
 //Takes the user to the index page
 app.use(express.static('public'));
@@ -53,23 +56,26 @@ function generateFakeData() {
 }
 
 app.get("/data/getdata/", function(request, response) {
+	response.send(JSON.stringify(json));
+});
+
+updateJson() {
 	var query = admin.firestore()
 	    .collection('STOCK')
 	    .orderBy('rating', 'desc')
 	    .limit(50);
-	var json = { "posts":[] };
-	  
-	query.forEach(function(post) {
-	 	json.push({"amount": post.get("amount"), "cost": post.get("cost"),
-	  		"country": post.get("country"), "name": post.get("name"), 
-	  		"quality": post.get("quality"), "shipping": post.get("shipping")});
+
+	query.get().then(snapshot => {
+	    snapshot.forEach(doc => {
+		 	json.push({"amount": post.get("amount"), "cost": post.get("cost"),
+		  		"country": post.get("country"), "name": post.get("name"), 
+		  		"quality": post.get("quality"), "shipping": post.get("shipping")});
+	    });
 	})
 	.catch(err => {
-	    console.log('Error loading stock : ', err);
+		console.log('Error getting documents', err);
 	});
-
-	response.send(JSON.stringify(json));
-});
+}
 
 //Listen for requests
 var listener = app.listen(process.env.PORT, function () {
