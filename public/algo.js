@@ -70,7 +70,8 @@ function grabQuote() {
 
 			mTotal += totprices[indexTA];
 			mAmount += amounts[indexTA];
-			array.splice(indexTA, 1);
+			totprices.splice(indexTA, 1);
+			amounts.splice(indexTA, 1);
 		}
 
 		var text = mAmount + " at : " + mTotal;
