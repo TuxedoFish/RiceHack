@@ -34,7 +34,9 @@ function updateUI() {
 	});
 }
 
-function grabQuote(input) {
+function grabQuote() {
+	input = $("#quoteinput").val();
+
 	var url = '/data/getdata/';
 	$.getJSON(url, function(data) {
 		totprices=[];
@@ -70,8 +72,9 @@ function grabQuote(input) {
 			array.splice(indexTA, 1);
 		}
 
-		console.log(mAmount + " at : " + mTotal);
-		$("#quote").text(mAmount + " at : " + mTotal);
+		var text = mAmount + " at : " + mTotal;
+		console.log(text);
+		$("#quote").text(text);
 	});
 }
 
