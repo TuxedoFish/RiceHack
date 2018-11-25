@@ -59,7 +59,7 @@ app.get("/data/getdata/", function(request, response) {
 	response.send(JSON.stringify(json));
 });
 
-updateJson() {
+function updateJson() {
 	var query = admin.firestore()
 	    .collection('STOCK')
 	    .orderBy('rating', 'desc')
