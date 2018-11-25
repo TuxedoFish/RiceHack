@@ -9,13 +9,10 @@ const nodeRequest = require('request');
 
 //Database
 var db;
-var NO_CUSTOMERS = 3;
 var NAMES = ["Susilo", "Albertus", "Abdurrahman", "Soetomo", "Boedino", "Ranomi"];
 var json = { "posts" : [] };
 //Start up firestore
 initFirebase();
-//Add a sample piece of info
-for(var i=0; i<NO_CUSTOMERS; i++) { addDummyData(); } 
 //Load the current stock
 updateJson();
 //Keep the content dynamic
