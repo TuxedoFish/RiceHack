@@ -65,8 +65,8 @@ function grabQuote(input) {
 		    	}
 		    }
 
-			mTotal.add(totprices[indexTA]);
-			mAmount.add(amounts[indexTA]);
+			mTotal += totprices[indexTA];
+			mAmount += amounts[indexTA];
 			array.splice(indexTA, 1);
 		}
 
