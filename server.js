@@ -65,8 +65,7 @@ app.get("/getdata", function(request, response) {
 	    console.log('Error loading stock : ', err);
 	});
 
-	res.setHeader('Content-Type', 'application/json');
-	res.send(json);
+	response.send(JSON.stringify(json));
 });
 
 //Listen for requests
