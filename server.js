@@ -64,10 +64,9 @@ function updateJson() {
 
 	query.get().then(snapshot => {
 	    snapshot.forEach(doc => {
-	    	console.log("one more stock added");
-		 	json.push({"amount": post.get("amount"), "cost": post.get("cost"),
-		  		"country": post.get("country"), "name": post.get("name"), 
-		  		"quality": post.get("quality"), "shipping": post.get("shipping")});
+		 	json.push({"amount": doc.get("amount"), "cost": doc.get("cost"),
+		  		"country": doc.get("country"), "name": doc.get("name"), 
+		  		"quality": doc.get("quality"), "shipping": doc.get("shipping")});
 	    });
 	})
 	.catch(err => {
