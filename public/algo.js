@@ -16,10 +16,12 @@ var getUrlParameter = function getUrlParameter(sParam) {
 $(document).ready(function() {
   var url = '/data/getdata/';
   $.getJSON(url, function(data) {
-    // console.log(data);
-    // if (data["ok"] == true) {
-    	console.log(data);
-        $('#quotes').html(data["posts"][0]["name"]);
-    // }
+    for(var i=0; i<data["posts"].length; i++) {
+    	var x = data["posts"][i];
+
+	    var markup = "<tr><td>" + x["name"] + "</td><td>" + x["cost"] + "</td><td>" + x["country"] + "</td></tr>"
+	    				+ "<tr><td>" + x["amount"] + "</td><td>" + x["shipping"] + "</td><td>" + x["quality"] + "</td></tr>";
+	    $("table tbody").append(markup);
+    }
   });
 });
