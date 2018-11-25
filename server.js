@@ -59,7 +59,7 @@ app.get("/data/getdata", function(request, response) {
 	query.forEach(function(post) {
 	 	json.push({"amount": post.get("amount"), "cost": post.get("cost"),
 	  		"country": post.get("country"), "name": post.get("name"), 
-	  		"quality": post.get("quality"), "shipping": post.get("shipping"))});
+	  		"quality": post.get("quality"), "shipping": post.get("shipping")});
 	})
 	.catch(err => {
 	    console.log('Error loading stock : ', err);
