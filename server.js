@@ -70,6 +70,8 @@ function updateTheStack() {
 function updateJson() {
 	var query = db.collection('STOCK');
 
+	json = { "posts" : [] };
+
 	query.get().then(snapshot => {
 	    snapshot.forEach(doc => {
 		 	json.posts.push( { "amount": doc.get("amount"), "cost": doc.get("cost"),

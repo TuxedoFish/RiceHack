@@ -29,7 +29,7 @@ function updateUI() {
                 "<th><span class='text'>Shipping</span></th>" +
                 "<th><span class='text'>Quality</span></th>";
 
-		$("table tbody").remove();
+		$("#farmers tr").remove();
 
 		$("#farmers tr").append(columns);
 
