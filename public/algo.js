@@ -73,6 +73,8 @@ function grabQuote() {
 		    	}
 		    }
 
+		    console.log("index : " + indexTA);
+
 		    //awful awful hardcoded bit
 		    if(indexTA == -1) {
 		    	var started = false;
