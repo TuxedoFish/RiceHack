@@ -87,6 +87,8 @@ function grabQuote() {
 		    	}
 		    }
 
+		    if(indexTA==-1) { console.log("ERROR"); }
+
 			mAmount += amounts[indexTA];
 			mTotal += totprices[indexTA];
 			totprices.splice(indexTA, 1);
