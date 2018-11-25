@@ -53,7 +53,7 @@ function generateFakeData() {
 }
 
 app.get("/data/getdata/", function(request, response) {
-	var query = firebase.firestore()
+	var query = admin.firestore()
 	    .collection('STOCK')
 	    .orderBy('rating', 'desc')
 	    .limit(50);
