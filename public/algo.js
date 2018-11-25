@@ -20,12 +20,18 @@ $(document).ready(function() {
 function updateUI() {
 	var url = '/data/getdata/';
 	$.getJSON(url, function(data) {
-		console.log("loaded : " + data["posts"].length + " data points");
+		console.log("loaded : " + data["posts"].length + " data points")
 
-		var tableRef = document.getElementById('#farmers tbody');
-		while ( tableRef.rows.length > 1 ) {
-			tableRef.deleteRow(1);
-		}
+		var columns = "<th><span class='text'>Farmer</span></th>" +
+                "<th><span class='text'>Cost</span></th>" +
+                "<th><span class='text'>Country</span></th>" +
+                "<th><span class='text'>Amount</span></th>" +
+                "<th><span class='text'>Shipping</span></th>" +
+                "<th><span class='text'>Quality</span></th>";
+
+		$("#farmers tbody").empty();
+
+		$("#farmers tbody").append(columns);
 
 	    for(var i=0; i<data["posts"].length; i++) {
 	    	var x = data["posts"][i];
