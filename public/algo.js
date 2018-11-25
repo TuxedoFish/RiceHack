@@ -14,7 +14,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 $(document).ready(function() {
-  var url = '/getdata';
+  var url = '/data/getdata/';
   $.getJSON(url, function(data) {
     // console.log(data);
     // if (data["ok"] == true) {
