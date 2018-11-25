@@ -57,14 +57,30 @@ function grabQuote() {
 	    mAmount = 0;
 
 	    while(mAmount<input) {
-	    	mBest = totprices[0]/amounts[0];
-	    	indexTA = 0;
+	    	if(mAmount+amounts[0] <= input) {
+		    	mBest = totprices[0]/amounts[0];
+		    	indexTA = 0;
+		    } else {
+		    	mBest = 10000;
+		    	indexTA = -1;
+		    }
 
 		    for(var i=1; i<totprices.length; i++) {
 		    	var ratio = totprices[i]/amounts[i];
 		    	if(ratio<mBest && mAmount+amounts[i] <= input) {
 		    		mBest = ratio;
 		    		indexTA = i;
+		    	}
+		    }
+
+		    //awful awful hardcoded bit
+		    if(indexTA == -1) {
+		    	for(var i=1; i<totprices.length; i++) {
+			    	var ratio = totprices[i]/amounts[i];
+			    	if(ratio<mBest && mAmount+amounts[i] <= input + 150) {
+			    		mBest = ratio;
+			    		indexTA = i;
+			    	}
 		    	}
 		    }
 
