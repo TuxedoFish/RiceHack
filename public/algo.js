@@ -69,6 +69,8 @@ function grabQuote(input) {
 			mAmount.add(amounts[indexTA]);
 			array.splice(indexTA, 1);
 		}
+
+		$("#quote").html(mAmount + " at : " mTotal);
 	});
 }
 
