@@ -90,15 +90,17 @@ input[type=text], select {
 }
 
 input[type=submit] {
-	padding:5px 15px; background:#ccc; border:0 none;
+	padding:5px 20px;
+    margin: 12px 0px 0px 12px;
     cursor:pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
     border-color: #ac5358;
-    color: #0d2432;
+    color: #FFFFFF;
     background-color: #0d2432;
     height: 50px;
-    width: 100px;
+    width: 200px;
+    text-align: center;
 }
 
 #quote {
