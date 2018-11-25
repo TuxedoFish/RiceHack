@@ -14,13 +14,23 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 $(document).ready(function() {
-	setTimeout(updateUI, 500);
+	setInterval(updateUI, 500);
 });
 
 function updateUI() {
 	var url = '/data/getdata/';
 	$.getJSON(url, function(data) {
+		var columns = "<th><span class='text'>Farmer</span></th>" +
+                "<th><span class='text'>Cost</span></th>" +
+                "<th><span class='text'>Country</span></th>" +
+                "<th><span class='text'>Amount</span></th>" +
+                "<th><span class='text'>Shipping</span></th>" +
+                "<th><span class='text'>Quality</span></th>";
+
 		$("#farmers tr").remove();
+
+		$("#farmers tr").append(columns);
+
 	    for(var i=0; i<data["posts"].length; i++) {
 	    	var x = data["posts"][i];
 

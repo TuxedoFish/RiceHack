@@ -19,7 +19,7 @@ for(var i=0; i<NO_CUSTOMERS; i++) { addDummyData(); }
 //Load the current stock
 updateJson();
 //Keep the content dynamic
-setTimeout(updateTheStack, 1500);
+setInterval(updateTheStack, 1500);
 
 //Takes the user to the index page
 app.use(express.static('public'));
