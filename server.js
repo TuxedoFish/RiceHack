@@ -11,7 +11,7 @@ const nodeRequest = require('request');
 var db;
 var NO_CUSTOMERS = 10;
 var NAMES = ["Susilo", "Albertus", "Abdurrahman", "Soetomo", "Boedino", "Ranomi"];
-var json = { "posts":[] };
+var json = { "posts" : [] };
 //Start up firestore
 initFirebase();
 //Add a sample piece of info
@@ -64,9 +64,9 @@ function updateJson() {
 
 	query.get().then(snapshot => {
 	    snapshot.forEach(doc => {
-		 	json.push({"amount": doc.get("amount"), "cost": doc.get("cost"),
+		 	json.posts.push( { "amount": doc.get("amount"), "cost": doc.get("cost"),
 		  		"country": doc.get("country"), "name": doc.get("name"), 
-		  		"quality": doc.get("quality"), "shipping": doc.get("shipping")});
+		  		"quality": doc.get("quality"), "shipping": doc.get("shipping") } );
 	    });
 	})
 	.catch(err => {
