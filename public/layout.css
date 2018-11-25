@@ -53,6 +53,9 @@ body {
 	left: 200px;
 	top: 100px;
 
+ 	width: 550px;
+ 	height: 600px;
+
 	position: relative;
 }
 

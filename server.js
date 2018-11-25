@@ -49,7 +49,7 @@ function generateFakeData() {
 		};
 }
 
-app.get("/data/getdata", function(request, response) {
+app.get("/getdata", function(request, response) {
 	var query = firebase.firestore()
 	    .collection('STOCK')
 	    .orderBy('rating', 'desc')
