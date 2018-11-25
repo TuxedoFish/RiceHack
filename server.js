@@ -60,13 +60,11 @@ app.get("/data/getdata/", function(request, response) {
 });
 
 function updateJson() {
-	var query = admin.firestore()
-	    .collection('STOCK')
-	    .orderBy('rating', 'desc')
-	    .limit(50);
+	var query = db.collection('STOCK').orderBy('quality', 'desc').limit(50);
 
 	query.get().then(snapshot => {
 	    snapshot.forEach(doc => {
+	    	console.log("one more stock added");
 		 	json.push({"amount": post.get("amount"), "cost": post.get("cost"),
 		  		"country": post.get("country"), "name": post.get("name"), 
 		  		"quality": post.get("quality"), "shipping": post.get("shipping")});
