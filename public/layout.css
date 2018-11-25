@@ -107,4 +107,7 @@ input[type=submit] {
 #quote {
 	padding-left: 20px;
 	display: inline-block;
+	
+    color: #0d2432;
+    font-weight: bold
 }
